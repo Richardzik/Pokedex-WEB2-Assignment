@@ -20,6 +20,26 @@ const typeColors = {
   steel: '#cccccc',
   flying: '#b0e0ff',
 };
+const badgeTypeColors = {
+  grass: '#78C850',
+  fire: '#F08030',
+  water: '#6890F0',
+  bug: '#A8B820',
+  electric: '#F8D030',
+  poison: '#A040A0',
+  rock: '#B8A038',
+  ice: '#98D8D8',
+  psychic: '#F85888',
+  dragon: '#7038F8',
+  fairy: '#EE99AC',
+  flying: '#A890F0',
+  dark: '#705848',
+  fighting: '#C03028',
+  ghost: '#705898',
+  steel: '#B8B8D0',
+  normal: '#A8A878',
+  ground: '#E0C068'
+};
 
 export default function PokemonCard({ data, onClick }) {
 
@@ -34,7 +54,7 @@ export default function PokemonCard({ data, onClick }) {
       <p className="pokemon-id">#{id}</p>
       <img src={image} alt={name} className="pokemon-img" />
       <h2 className="pokemon-name">{name}</h2>
-      <span className={`type-badge ${type}`}>{type}</span>
+      <span className="type-badge" style={{ backgroundColor: badgeTypeColors[type] || '#aaa' }}> {type} </span>
     </div>
   );
 }
