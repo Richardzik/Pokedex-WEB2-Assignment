@@ -22,14 +22,19 @@ const typeColors = {
 };
 
 export default function PokemonCard({ data, onClick }) {
-  const { name, type, image } = data;
-  const backgroundColor = typeColors[type] || '#e0e0e0';
+
+  if (!data) return null;
+
+  const { name, type, image, id } = data;
+  const backgroundColor = typeColors[type] || '#e0e0e0'; // sets gray if type does not match any type colors
 
   return (
     <div className="pokemon-card" style={{ backgroundColor }} onClick={onClick}
     >
+      <p className="pokemon-id">#{id}</p>
       <img src={image} alt={name} className="pokemon-img" />
       <h2 className="pokemon-name">{name}</h2>
+      <span className={`type-badge ${type}`}>{type}</span>
     </div>
   );
 }

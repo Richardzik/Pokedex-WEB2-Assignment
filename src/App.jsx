@@ -6,28 +6,32 @@ import fetchPokemon  from './API/FetchPokemon_API';
 function App() {
   const [pokemons, setPokemons] = useState([]);
   const [selected, setSelected] = useState(null);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    const loadPokemons = async () => {
-      const ids = Array.from({ length: 15 }, (_, i) => i + 1); // Get IDs 1–15
-      const results = await Promise.all(ids.map(id => fetchPokemon(id)));
-      setPokemons(results.filter(Boolean)); // Remove nulls
+    const loadPage = async () => {
+      const results = await fetchPokemon(page);
+      setPokemons(results)
     };
-
-    loadPokemons();
-  }, []);
+    loadPage();
+  }, [page]);
   return (
     <div className="pokedex">
       <h1>Pokedex</h1>
       <div className="card-grid">
-        {pokemons.map(p => (
-          <PokemonCard
-            key={p.id}
-            data={p.getData}
-            onClick={() => setSelected(p)}
-          />
+        {pokemons.filter(p => p).map(p => (
+          <PokemonCard key={p.id} data={p.getData} onClick={() => setSelected(p)}/>
         ))}
       </div>
+      <div className='pagination-container'>
+        <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+          Previous page
+        </button>
+        <button onClick={() => setPage(page + 1)}>
+          Next page
+        </button>
+      </div>
+      <p>{page}</p>
     </div>
   );
 }
