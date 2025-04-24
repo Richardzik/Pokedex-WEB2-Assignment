@@ -30,7 +30,7 @@
   height: 5rem;
   
 }
-.pokemon-name {
+.pokemon-name {    /* TODO: some pokemon names are too long and affects the card size */
   text-transform: capitalize;
   font-size: 1.2rem;
   font-weight: bold;
