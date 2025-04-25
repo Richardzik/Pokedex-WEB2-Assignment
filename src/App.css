@@ -1,8 +1,10 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem;
   text-align: center;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .pokedex {
   width: 60%; 
@@ -47,6 +49,22 @@
 }
 .pokemon-id{
   color:black;
+}
+/* Navigation bar component styling */
+.navigation-bar-container {
+  font-family: 'PokemonSolid';
+  font-size: 1.2rem;
+  display: flex;
+  justify-content:center;
+  gap: 3rem;
+  align-items: center;
+  padding: 1rem;
+  background-color: #2a75bb; 
+  color: white;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border: 2px solid white;
+  border-top: none;
 }
 
 /* App styling */

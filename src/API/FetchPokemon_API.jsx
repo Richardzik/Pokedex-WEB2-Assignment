@@ -15,7 +15,7 @@ export default async function fetchPokemon(currentPage) {
   return Promise.all(pokemonDetails); 
  }
   catch (error) {
-    console.error('Error fetching Pokemon:', error);
-    return null;
+    console.error('Error fetchinga Pokemon:', error);
+    return [];
   }
 }
