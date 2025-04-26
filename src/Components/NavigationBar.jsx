@@ -7,7 +7,7 @@ export default function NavigationBar(){
         <div className="navigation-bar-container">
             <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Pokedex
             </NavLink>
-            <NavLink to="/ABOUT" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>About us
+            <NavLink to="/ABOUT" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>About 
             </NavLink>
         </div>
         </>

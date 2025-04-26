@@ -13,7 +13,6 @@ function App() {
   useEffect(() => {
     const loadPage = async () => {
       const results = await fetchPokemon(page);
-      console.log("Fetched Pokémon:", results);
       setPokemons(results)
     };
     loadPage();
@@ -24,7 +23,7 @@ function App() {
       <div className="pokedex">
       <NavigationBar />
       <Routes>
-        <Route path="/" element={<PokedexPage pokemons={pokemons} page={page} setPage={setPage} />} />
+        <Route path="/" element={<PokedexPage pokemons={pokemons} page={page} setPage={setPage} selected={selected} setSelected={setSelected} />} />
         <Route path="/about" element={<AboutPage/>}/>
       </Routes>
       </div>
